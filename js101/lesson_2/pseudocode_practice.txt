@@ -1,0 +1,115 @@
+Pseudocode Practice Problems
+
+Problem 1) A function that returns the sum of two numbers.
+## Casual ##
+Given two numbers, return the sum of number1 and number2
+
+## Formal ##
+SET output = number1 + number2
+PRINT output
+
+Problem 2) A function that takes an array of strings, and returns a string that is all those strings concatenated together.
+## Casual ##
+Given a collection of strings.
+
+Create an empty initial string
+Iterate through the collection of strings one by one.
+ - Concat the current string to the initial string
+
+After iterating through collection, return initial string
+
+## Formal ##
+SET output = empty string
+SET iterator = 0
+WHILE iterator < length of collection
+  SET output = output + string within collection at space "iterator"
+  iterator++
+
+RETURN output
+
+Problem 3) A method that takes an array of integers, and returns a new array with every other element from the original array, starting with the first element. For instance:
+## Casual ##
+Given a collection of numbers
+Create an empty collection
+
+Iterate through original collection
+ - If the current index is even or zero
+  - append current value at index to empty collection
+ - Otherwise, continue to next value
+
+Return empty collection
+
+## Formal ##
+SET output = empty array
+SET iterator = 0
+
+WHILE iterator < length of collection
+  IF iterator modulus 2 is equal to 0
+    append current value to output
+
+  iterator++
+
+RETURN output
+
+Problem 4) A function that determines the index of the 3rd occurrence of a given character in a string. 
+For instance, if the given character is 'x' and the string is 'axbxcdxex', the function should return 6 (the index of the 3rd 'x').
+If the given character does not occur at least 3 times, return null.
+
+## Casual ##
+Given a string of characters and a starting character
+
+Intialize counter to 0
+
+Iterate through string one character at a time
+  - If current character is equal to given character
+    - Increment counter by one
+    - If counter is equal to three
+      - Return current index
+
+If you complete loop, return null
+
+## Formal ##
+SET counter = 0
+SET iterator = 0
+
+WHILE iterator < length of given string
+  IF current character == given character
+    counter++
+    IF counter == 3
+      RETURN interator
+  interator++
+
+RETURN null
+
+
+Problem 5) A function that takes two arrays of numbers and returns the result of merging the arrays. 
+The elements of the first array should become the elements at the even indexes of the returned array, 
+while the elements of the second array should become the elements at the odd indexes.
+
+## Casual ##
+Given two collections of numbers of equal lengths
+
+Initialize empty array
+Initialize iterator at 0
+
+Perform loop with a number of iterations equal to the length of the given arrays
+  Append value of Array One at position iterator to the empty array
+  Append value of Array two at position iterator to the empty array
+  Ingrement iterator
+
+return empty array
+
+## Formal ##
+GET arrayOne
+GET arrayTwo
+SET output = empty array
+SET iterator = 0
+
+WHILE interator < length of arrayOne
+  Append value of arrayOne at position iterator to output
+  Append value of arrayTwo at position iterator to output
+  iterator++
+
+RETURN output
+
+
