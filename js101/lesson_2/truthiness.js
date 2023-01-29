@@ -1,6 +1,18 @@
+// truthiness.js
+
 console.log(true);
 console.log(false);
 
+function makeLonger(string, longer) {
+  if (longer) {
+    return string + string;
+  } else {
+    return string;
+  }
+}
+
+makeLonger("abc", true);
+makeLonger("xyz", false);
 
 function isDigit(char) {
   if (char >= "0" && char <= "9") {
@@ -10,18 +22,8 @@ function isDigit(char) {
   }
 }
 
-
 isDigit("5");
 isDigit("a");
-
-let value = "";
-if (value === true) {
-  console.log("It's true!");
-} else if (value === false) {
-  console.log("It's false!");
-} else {
-  console.log("It's not true or false!");
-}
 
 let num = 5;
 
@@ -43,11 +45,10 @@ if (isSmall(num)) {
   console.log("large number");
 }
 
-num = 5;
-if (num) {
-  console.log("valid number");
-} else {
-  console.log("error!");
-}
+let myName = "mike";
 
-console.log(num === true);
+if (myName && (myName.length > 0)) {
+  console.log(`Hi, ${myName}.`);
+} else {
+  console.log("Hello, whoever you are.");
+}
