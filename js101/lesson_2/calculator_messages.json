@@ -1,10 +1,14 @@
 {
   "en": {
-    "welcome": "Welcome to Calculator! Enter your name: ",
-    "validName": "Make sure to enter a valid name."
+    "welcome": "Welcome to Calculator!",
+    "validNumber": "Hmm... that doesn't look like a valid number.",
+    "validOperation": "Must choose 1, 2, 3, or 4",
+    "validResponse": "Hmm... that doesn't look like a valid response. Please enter 'y' or 'n'."
   },
   "es": {
-    "welcome": "¡Bienvenido a Calculadora! Introduzca su nombre:",
-    "validName": "Asegúrese de ingresar un nombre válido."
+    "welcome": "¡Bienvenido a Calculadora!",
+    "validNumber": "Hmm... eso no parece un número válido.",
+    "validOperation": "Debe elegir 1, 2, 3 o 4",
+    "validResponse": "Hmm... eso no parece una respuesta válida. Por favor ingrese 's' o 'n'."
   }
 }
