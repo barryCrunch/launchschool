@@ -10,16 +10,16 @@ function prompt(message) {
   return `=> ${message}`;
 }
 
-function generateMonthlyDuration(duration) {
+function calculateMonthlyDuration(duration) {
   return duration * MONTHS_IN_YEAR;
 }
 
-function generateMonthlyRate(annualPercentageRate) {
+function calculateMonthlyRate(annualPercentageRate) {
   return annualPercentageRate / MONTHS_IN_YEAR;
 
 }
 
-function generateMonthlyPayment(amount, rate, duration) {
+function calculateMonthlyPayment(amount, rate, duration) {
   return amount * (rate / (1 - Math.pow((1 + rate), (-duration))));
 }
 
@@ -29,10 +29,10 @@ let annualPercentageRate = readline.question(prompt('What is the Annual Percenta
 
 let loanDurationInYears = readline.question(prompt('What is the loan duration in years? '));
 
-let loanDurationInMonths = generateMonthlyDuration(loanDurationInYears);
+let loanDurationInMonths = calculateMonthlyDuration(loanDurationInYears);
 
-let monthlyInterestRate = generateMonthlyRate(annualPercentageRate) / 100;
+let monthlyInterestRate = calculateMonthlyRate(annualPercentageRate) / 100;
 
-let monthlyPayment = generateMonthlyPayment(loanAmount, monthlyInterestRate, loanDurationInMonths);
+let monthlyPayment = calculateMonthlyPayment(loanAmount, monthlyInterestRate, loanDurationInMonths);
 
 console.log(prompt(`Your monthly payment is ${formatToDollars(monthlyPayment)}`));
