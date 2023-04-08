@@ -1,88 +1,101 @@
 // easy_1.js
 
-function displayProblemNumber(number) {
-  console.log("\n*****************************");
-  console.log(`        Promblem ${number}      `);
-  console.log("\n*****************************");
-}
-
-displayProblemNumber(1);
-let numbers = [1, 2, 3];
-numbers[6] = 5;
-console.log(numbers);
-console.log(numbers[4]);
-
-
-displayProblemNumber(2);
+// Question 2
+// How can you determine wheather a given string ends with an exclamation mark?
 let str1 = "Come over here!"; // true
 let str2 = "What's up, Doc?"; // false
 
-function checkExclamation(str) {
+// My Solution
+function hasShebang(str) {
   return str[str.length - 1] === '!';
 }
+hasShebang(str1);
+hasShebang(str2);
 
-console.log(checkExclamation(str1));
-console.log(checkExclamation(str2));
+// Provided Solution
+str1.endsWith('!');
+str2.endsWith('!');
 
-// or
+// Question 3
+// Determine wheater the following object of people
+// and their age contains an entry for 'Spot'
+let ages1 = { Herman: 32, Lily: 30, Grandpa: 402, Eddie: 10 };
+let ages2 = { Spot: 32, Lily: 30, Grandpa: 402, Eddie: 10 };
 
-console.log(str1.endsWith("!"));
-console.log(str2.endsWith("!"));
+// My Solution
+function hasSpot(obj) {
+  return Object.keys(obj).includes('Spot');
+}
 
-displayProblemNumber(3);
-let ages = { Herman: 32, Lily: 30, Grandpa: 402, Eddie: 10 };
-console.log(Object.keys(ages).includes('Spot'));
-// or
-console.log(ages.hasOwnProperty("Spot"));
+hasSpot(ages1);
+hasSpot(ages2);
 
-displayProblemNumber(4);
+// Provide Solution
+ages1.hasOwnProperty("Spot");
+ages2.hasOwnProperty("Spot");
+
+// Question 4
+// Using the following string, create a new string that contains all
+// lowercase letters except for the first character, which should
+// be capitalized.
 let munstersDescription = "the Munsters are CREEPY and Spooky.";
-// => The munsters are creepy and spooky.
-console.log(munstersDescription.charAt(0).toUpperCase() +
-  munstersDescription.slice(1).toLowerCase());
 
-displayProblemNumber(5);
-console.log(false == '0'); // true
-console.log(false === '0'); //false
+function formatString(str) {
+  return str[0].toUpperCase() + str.slice(1).toLowerCase();
+}
 
-displayProblemNumber(6);
-ages = { Herman: 32, Lily: 30, Grandpa: 5843, Eddie: 10 };
+console.log(formatString(munstersDescription));
+
+// Question 5
+// What will the following code output?
+console.log(false == '0'); // True
+console.log(false === '0'); // False
+
+// Question 6
+// Add the following entries to ages
+let ages = { Herman: 32, Lily: 30, Grandpa: 5843, Eddie: 10 };
 let additionalAges = { Marilyn: 22, Spot: 237 };
+
+// My Solution
+ages = {...ages, ...additionalAges};
+console.log(ages);
+
+// Provided Solution
 console.log(Object.assign(ages, additionalAges));
 
-displayProblemNumber(7);
+// Question 7
+// Determine wheather the name Dino appears in the strings below
 str1 = "Few things in life are as important as house training your pet dinosaur.";
 str2 = "Fred and Wilma have a pet dinosaur named Dino.";
-console.log(str1.includes("Dino"));
-console.log(str2.includes("Dino"));
-// or
-console.log(str1.match("Dino") !== null);
-console.log(str2.match("Dino") !== null);
-// or
-console.log(str1.indexOf("Dino") > -1);
-console.log(str2.indexOf("Dino") > -1);
 
-displayProblemNumber(8);
+// My Solution
+function hasDino(str) {
+  return str.includes('Dino');
+}
+console.log(hasDino(str1));
+console.log(hasDino(str2));
+
+// Provided Solution
+console.log(str1.match('Dino') !== null);
+console.log(str2.match('Dino') !== null);
+
+// Question 8
+// How can we add family pet, "Dino", to the following array?
 let flintstones = ["Fred", "Barney", "Wilma", "Betty", "Bambam", "Pebbles"];
-flintstones[flintstones.length] = "Dino";
-console.log(flintstones);
-// or
-flintstones = ["Fred", "Barney", "Wilma", "Betty", "Bambam", "Pebbles"];
 flintstones.push('Dino');
 console.log(flintstones);
 
-displayProblemNumber(9);
-flintstones = ["Fred", "Barney", "Wilma", "Betty", "Bambam", "Pebbles"];
-flintstones = flintstones.concat(['Dino', 'Hoppy']);
-console.log(flintstones);
-// or
-flintstones = ["Fred", "Barney", "Wilma", "Betty", "Bambam", "Pebbles"];
-flintstones.push('Dino', 'Hoppy');
+// Question 9
+// Add Multiple Items to the flinstones array
+flintstones.push('Dino', 'Bob');
 console.log(flintstones);
 
-displayProblemNumber(10);
+// Question 10
+//  Return a new version of this sentence that ends just before the word house
 let advice = "Few things in life are as important as house training your pet dinosaur.";
 
-// Expected return value:
-// => 'Few things in life are as important as '
-console.log(advice.slice(0, advice.indexOf("house")));
+function noHouse(str) {
+  return advice.slice(0, advice.indexOf('house'));
+}
+
+console.log(noHouse(advice));
